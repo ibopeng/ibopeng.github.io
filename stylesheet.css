@@ -16,12 +16,12 @@ tr,
 p,
 a {
   font-family: 'PT Serif', serif;
-  font-size: 14px
+  font-size: 15px
 }
 
 strong {
   font-family: 'PT Serif', serif;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 heading {
@@ -32,7 +32,7 @@ heading {
 
 papertitle {
   font-family: 'PT Serif', serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600
 }
 
