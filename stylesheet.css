@@ -30,11 +30,12 @@ heading {
   color: #464750;
 }
 
-papertitle {
+coursetitle, papertitle, schooltitle {
   font-family: 'PT Serif', serif;
   font-size: 16px;
-  font-weight: 600
+  font-weight: bold
 }
+
 
 name {
   font-family: 'Lora', serif;
