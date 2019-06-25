@@ -72,3 +72,7 @@ span.highlight {
 li{
   margin: 6px 0;
 }
+
+img {
+  vertical-align: middle;
+}
