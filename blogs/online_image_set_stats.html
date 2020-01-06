@@ -13124,15 +13124,15 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Standard definition:</p>
-$$ m = \frac{\sum_{i=1}^n x_i}{n}$$$$ \sigma = \sqrt{\frac{\sum_{i=1}^{n}(x_i - m)}{n}}$$<p>Considering that the image set for machine (deep) learning is usually very large, it is impractical to load all images into the limited memory and compute the $(m, \sigma)$ in one shot. Instead, we would need to update $(m, \sigma)$ with an online fashion, i.e., updating $(m, \sigma)$ when a new image comes in. That is,</p>
+$$ m = \frac{\sum_{i=1}^n x_i}{n}$$$$ \sigma = \sqrt{\frac{\sum_{i=1}^{n}(x_i - m)^2}{n}}$$<p>Considering that the image set for machine (deep) learning is usually very large, it is impractical to load all images into the limited memory and compute the $(m, \sigma)$ in one shot. Instead, we would need to update $(m, \sigma)$ with an online fashion, i.e., updating $(m, \sigma)$ when a new image comes in. That is,</p>
 <p>Updating the mean $m$,
 $$m_t = \frac{m_{t-1} n_{t-1} + x_t}{n_{t-1} + 1}$$</p>
 <p>Updating the standard deviation $\sigma$, note that 
 $$\sigma^2 = \text{Var}(X) = \mathbb{E}[X^2] - \mathbb{E}[X]^2$$
 We update $\mathbb{E}[X^2]$ first, then update $\text{Var}(X)$ or $\sigma$,
 $$\mathbb{E}[X^2]_t = \frac{\mathbb{E}[X^2]_{t-1} n_{t-1} + x^2_t}{n_{t-1} + 1}$$
-$$\sigma^2_{t} = \text{Var}(X)_{t} =\mathbb{E}[X^2]_{t} - \mathbb{E}[X]_{t}^2= \mathbb{E}[X^2]_t - m^2$$
-where $m = \mathbb{E}[X]$.</p>
+$$\sigma^2_{t} = \text{Var}(X)_{t} =\mathbb{E}[X^2]_{t} - \mathbb{E}[X]_{t}^2= \mathbb{E}[X^2]_t - m_t^2$$
+where $m_t = \mathbb{E}[X]_t$.</p>
 
 </div>
 </div>
@@ -13221,10 +13221,10 @@ where $m = \mathbb{E}[X]$.</p>
 
  
  
-<div id="5398b8c4-a1e5-4df4-821a-1bbad901f843"></div>
+<div id="9a510640-cc40-4629-a9ad-d8bcf9f292ca"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#5398b8c4-a1e5-4df4-821a-1bbad901f843');
+var element = $('#9a510640-cc40-4629-a9ad-d8bcf9f292ca');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "691ac821de884ba599ab1b44a61a7582", "version_major": 2, "version_minor": 0}
