@@ -178,6 +178,14 @@ jrnlconf {
 	padding-bottom: 2px;
 }
 
+.player {
+  margin: 0 auto;
+  font-size: small;
+  max-width:100%;
+}
+
+
+
 
 /* Add a black background color to the top navigation */
 .topnav {
