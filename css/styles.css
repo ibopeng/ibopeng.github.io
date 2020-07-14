@@ -19,7 +19,7 @@ body {
 
 .container_content {
 	background: white;
-	max-width: 960px;
+	max-width: 900px;
 	margin: 0 auto;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -54,7 +54,7 @@ body {
 
 .copyright {
 	border-top: 1px solid #BDC3C7;
-	max-width: 960px;
+	max-width: 900px;
 	margin: 0 auto;
 	padding-left: 20px;
 	padding-right: 20px;
