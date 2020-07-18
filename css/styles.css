@@ -71,7 +71,7 @@ a:active {
 }
 
 .container_content {
-	background: rgba(255, 255, 255, 0.75);
+	background: rgba(255, 255, 255, 0.4);
 	max-width: 900px;
 	margin: 0 auto;
 	padding-left: 20px;
@@ -87,7 +87,7 @@ a:active {
 	padding-right: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	background: rgba(255, 255, 255, 0.75);
+	background: rgba(255, 255, 255, 0.4);
 }
 
 .logo {
