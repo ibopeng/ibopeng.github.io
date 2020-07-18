@@ -73,12 +73,12 @@ body {
 
 .logo a {
   text-decoration: none;
-  color: #696969;
+  color: black;
 }
 
 .logo a:hover {
-  color: black;
-  border-bottom: none;
+  color: #696969;
+  text-decoration: none;
 }
 
 .logo p {
@@ -102,13 +102,15 @@ body {
 a {
 	text-decoration: none;
 	/*color: #2E86C1;*/
-  color: purple;
+  /*color: #2A5DB0;*/
+  color: #0479a8;
 }
 
 a:hover {
   background: none;
-  border-bottom: 2px solid black;
+  /*border-bottom: 1px solid #2A5DB0;*/
   /*color: purple;*/
+  text-decoration: underline;
 }
 
 a:active {
@@ -248,7 +250,7 @@ jrnlconf {
 .topnav a {
   float: left;
   display: block;
-  color: #696969;
+  color: black;
   text-align: center;
   padding: 2px 0px 1px 0px;
   margin: 12px 16px 12px 16px;
@@ -267,7 +269,7 @@ jrnlconf {
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
-  color: #696969;
+  color: black;
 }
 
 /* Dropdown container - needed to position the dropdown content */
@@ -309,8 +311,8 @@ jrnlconf {
 /* Add a dark background on topnav links and the dropdown button on hover */
 .topnav a:hover, .dropdown:hover .dropbtn {
   /*background-color: #555;*/
-  color: black;
-  border-bottom: 2px black solid;
+  color: #696969;
+  border-bottom: 2px #696969 solid;
   /*border-bottom: none;*/
 }
 
