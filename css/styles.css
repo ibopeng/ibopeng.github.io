@@ -4,106 +4,29 @@ body {
 	font-family: Georgia, Times New Roman, Times, serif;
 	font-size:1.125rem;
 	/*background: #CDCDCD;*/
-  /*background-image: url('../images/background.jpg');*/
-  /*background-size: 100% 100%;*/
+  	background-image: url('../images/background_bear.jpg');
+  	/*background-size: 100% 100%;*/
 }
 
-
-.container_header {
-	max-width: 90%;
-	margin: 0 auto;
-	padding-left: 20px;
-	padding-right: 20px;
-	height: 55px;
-  background: none;
-  border-bottom: 1px solid #BDC3C7;
+body.img {
+	opacity: 0.5;
 }
 
-.container_content {
-	background: white;
-	max-width: 900px;
-	margin: 0 auto;
-	padding-left: 20px;
-	padding-right: 20px;
-
+p, h1, h2, h3 {
+	color: #2b2b2b;
+	/*color: #424242;*/
 }
 
-.header {
-	/*background: #252523;*/
-  background: white;
-	width: 100%;
-	height: 55px;
-	top: 0px;
-	position: fixed;
-	
-}
-
-.content {
-	margin-top: 84px;
-	max-width: 100%;
-	margin-bottom: 25px;
-	margin-left: 20px;
-	margin-right: 20px;
-	border-radius: 15px;
-
-}
-
-.foot {
-	background: white;
-	width: 100%;
-	bottom: 0px;
-	border-top: 1px solid #BDC3C7;
-}
-
-.copyright {
-	border-top: 1px solid #BDC3C7;
-	max-width: 900px;
-	margin: 0 auto;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	background: white;
-}
-
-.logo {
-	float: left;
-	/*height: 54px;*/
-}
-
-.logo a {
-  text-decoration: none;
-  color: black;
-}
-
-.logo a:hover {
-  color: #696969;
-  text-decoration: none;
-}
-
-.logo p {
-	padding: 14px 0px;
-	margin: 0 auto;
-	float: bottom;
-  color: black;
-  font-family:  "Georgia", Times New Roman, Times, serif;
-  text-transform: uppercase;
-  font-size: 1.125rem;
-  font-weight: bold;
-}
-
-.nav {
-	float: right;
-	padding-top: 0px;
-	padding-bottom: 5px;
-	padding-right: 0px;
+h1, h2, h3 {
+	text-transform: uppercase; 
+	font-family: "Poppins", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
 	text-decoration: none;
 	/*color: #2E86C1;*/
   /*color: #2A5DB0;*/
-  color: #0479a8;
+ 	color: #0479a8;
 }
 
 a:hover {
@@ -115,15 +38,88 @@ a:hover {
 
 a:active {
   background: none;
-  
+  color: purple;
 }
 
+.header {
+	/*background: #252523;*/
+  	background: rgba(255, 255, 255, 0.9);
+	width: 100%;
+	height: 55px;
+	top: 0px;
+	position: fixed;
+}
 
-caption_blog {
-  color: black;
-  font-size: 1.5rem;
-  font-weight: 800;
-  font-family: "Poppins", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+.container_header {
+	max-width: 90%;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 55px;
+  background: none;
+  border-bottom: 1px solid #BDC3C7;
+}
+
+.content {
+	margin-top: 84px;
+	max-width: 100%;
+	margin-bottom: 25px;
+	margin-left: 20px;
+	margin-right: 20px;
+	border-radius: 15px;
+}
+
+.container_content {
+	background: rgba(255, 255, 255, 0.75);
+	max-width: 900px;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 20px;
+
+}
+
+.copyright {
+	border-top: 1px solid #BDC3C7;
+	max-width: 900px;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background: rgba(255, 255, 255, 0.75);
+}
+
+.logo {
+	float: left;
+	/*height: 54px;*/
+}
+
+.logo a {
+  color: #2b2b2b;
+}
+
+.logo a:hover {
+  color: #696969;
+  text-decoration: none;
+}
+
+.logo h2 {
+	padding: 10px 0px;
+	margin: 0 auto;
+	float: bottom;
+	font-family: "Arizonia", Georgia, Times New Roman, Times, serif;
+	text-transform: none;
+	font-size: 1.75rem;
+	/*font: 400 100px/1.3;*/
+	color: #2b2b2b;
+	text-shadow: 4px 4px 0px rgba(0,0,0,0.1); 
+}
+
+.nav {
+	float: right;
+	padding-top: 0px;
+	padding-bottom: 5px;
+	padding-right: 0px;
 }
 
 
@@ -170,16 +166,11 @@ jrnlconf {
   text-align: left;
   margin-top: 0;
   font-size: 2rem;
-  font-family: "Poppins", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
 }
 
 .profile_sec h2 {
-  color: black;
   font-size: 1.5rem;
   font-weight: 800;
-  font-family: "Poppins", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
 }
 
 .profile_sec ul {
@@ -196,24 +187,24 @@ jrnlconf {
   display: inline-block;
 }
 
-.content_sec {
+.content_sec, .blog {
 	padding-bottom: 10px;
 	padding-top: 10px; 
 }
 
+.blog h2 {
+	font-size: 1.5rem;
+	text-transform: none;
+}
+
 .content_sec h2 {
-  color: black;
   font-size: 1.5rem;
   font-weight: 800;
-  font-family: "Poppins", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
 }
 
 .content_sec h3 {
-  color: black;
   font-size: 1.25rem;
-  font-family: "Poppins", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
+  
 }
 
 .content_sec ul {
@@ -232,16 +223,12 @@ jrnlconf {
 }
 
 
-
-
 /* Add a black background color to the top navigation */
 .topnav {
   /*background-color: #252523;*/
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   overflow: hidden;
   float: right;
-  font-family: Georgia, Times New Roman, Times, serif;
-  font-weight: medium;
   font-size: 1.125rem;
   text-transform: uppercase;
 }
@@ -250,14 +237,11 @@ jrnlconf {
 .topnav a {
   float: left;
   display: block;
-  color: black;
+  color: #2b2b2b;
   text-align: center;
-  padding: 2px 0px 1px 0px;
+  padding: 2px 0px 2px 0px;
   margin: 12px 16px 12px 16px;
   text-decoration: none;
-  /*background: black;*/
-
-
 }
 
 /* Add an active class to highlight the current page */
@@ -269,7 +253,7 @@ jrnlconf {
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
-  color: black;
+  color: #2b2b2b;
 }
 
 /* Dropdown container - needed to position the dropdown content */
@@ -302,7 +286,7 @@ jrnlconf {
 /* Style the links inside the dropdown */
 .dropdown-content a {
   float: none;
-  color: black;
+  color: #2b2b2b;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -311,15 +295,16 @@ jrnlconf {
 /* Add a dark background on topnav links and the dropdown button on hover */
 .topnav a:hover, .dropdown:hover .dropbtn {
   /*background-color: #555;*/
-  color: #696969;
-  border-bottom: 2px #696969 solid;
+  /*color: #696969;*/
+  color: #2b2b2b;
+  border-bottom: 2px #2b2b2b solid;
   /*border-bottom: none;*/
 }
 
 /* Add a grey background to dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #ddd;
-  color: black;
+  color: #2b2b2b;
 }
 
 /* Show the dropdown menu when the user moves the mouse over the dropdown button */
