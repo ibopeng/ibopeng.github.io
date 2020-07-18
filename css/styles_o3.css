@@ -1,22 +1,20 @@
 body {
 	width: 100%;
 	margin: auto;
-	font-family: Georgia, Times New Roman, Times, serif;
-	font-size:1.125rem;
+	font-family:"Roboto",Helvetica,Arial,sans-serif;
+	font-size:16px;
 	/*background: #CDCDCD;*/
   /*background-image: url('../images/background.jpg');*/
   /*background-size: 100% 100%;*/
 }
 
-
 .container_header {
-	max-width: 90%;
+	max-width: 100%;
 	margin: 0 auto;
 	padding-left: 20px;
 	padding-right: 20px;
-	height: 55px;
+	height: 59px;
   background: none;
-  border-bottom: 1px solid #BDC3C7;
 }
 
 .container_content {
@@ -29,13 +27,12 @@ body {
 }
 
 .header {
-	/*background: #252523;*/
-  background: white;
+	background: #252523;
 	width: 100%;
-	height: 55px;
+	height: 59px;
 	top: 0px;
 	position: fixed;
-	
+	/*border-bottom: 1px solid #BDC3C7;*/
 }
 
 .content {
@@ -68,28 +65,19 @@ body {
 
 .logo {
 	float: left;
-	/*height: 54px;*/
+	height: 59px;
 }
 
 .logo a {
   text-decoration: none;
-  color: #696969;
+  color: white;
 }
 
-.logo a:hover {
-  color: black;
-  border-bottom: none;
-}
-
-.logo p {
-	padding: 14px 0px;
+.logo h2 {
+	padding: 15px 20px;
 	margin: 0 auto;
 	float: bottom;
-  color: black;
-  font-family:  "Georgia", Times New Roman, Times, serif;
-  text-transform: uppercase;
-  font-size: 1.125rem;
-  font-weight: bold;
+  color: white;
 }
 
 .nav {
@@ -107,7 +95,7 @@ a {
 
 a:hover {
   background: none;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
   /*color: purple;*/
 }
 
@@ -117,13 +105,18 @@ a:active {
 }
 
 
-caption_blog {
+heading {
   color: black;
-  font-size: 1.5rem;
-  font-weight: 800;
-  font-family: "Poppins", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
 }
 
+name {
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  font-size: 32px;
+}
 
 projecttitle, papertitle {
   font-weight: bold
@@ -156,38 +149,20 @@ jrnlconf {
     visibility: hidden;
 }
 
-.profile_sec {
+.intro_sec {
 	padding-bottom: 10px;
 	padding-top: 25px; 
 	overflow: hidden;
 }
 
-.profile_sec h1 {
-  font-weight: 800;
-  -webkit-font-smoothing: antialiased;
-  text-align: left;
-  margin-top: 0;
-  font-size: 2rem;
-  font-family: "Poppins", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-}
-
-.profile_sec h2 {
-  color: black;
-  font-size: 1.5rem;
-  font-weight: 800;
-  font-family: "Poppins", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-}
-
-.profile_sec ul {
+.intro_sec ul {
 	margin: 0px;
 	padding: 0px;
 	float:left;
 	display: inline-block;
 }
 
-.profile_sec li {
+.intro_sec li {
   padding-right: 30px;
   margin: 0px;
   float: left;
@@ -197,21 +172,6 @@ jrnlconf {
 .content_sec {
 	padding-bottom: 10px;
 	padding-top: 10px; 
-}
-
-.content_sec h2 {
-  color: black;
-  font-size: 1.5rem;
-  font-weight: 800;
-  font-family: "Poppins", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-}
-
-.content_sec h3 {
-  color: black;
-  font-size: 1.25rem;
-  font-family: "Poppins", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
 }
 
 .content_sec ul {
@@ -234,27 +194,20 @@ jrnlconf {
 
 /* Add a black background color to the top navigation */
 .topnav {
-  /*background-color: #252523;*/
-  background: white;
+  background-color: #252523;
   overflow: hidden;
   float: right;
-  font-family: Georgia, Times New Roman, Times, serif;
-  font-weight: medium;
-  font-size: 1.125rem;
-  text-transform: uppercase;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
   display: block;
-  color: #696969;
+  color: white;
   text-align: center;
-  padding: 2px 0px 1px 0px;
-  margin: 12px 16px 12px 16px;
+  padding: 20px 16px 20px 16px;
   text-decoration: none;
   /*background: black;*/
-
 
 }
 
@@ -267,7 +220,7 @@ jrnlconf {
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
-  color: #696969;
+  color: white;
 }
 
 /* Dropdown container - needed to position the dropdown content */
@@ -278,11 +231,11 @@ jrnlconf {
 
 /* Style the dropdown button to fit inside the topnav */
 .dropdown .dropbtn {
-  /*font-size: 1.05rem;*/
+  font-size: 17px;
   border: none;
   outline: none;
   color: white;
-  /*padding: 14px 16px 14px 16px;*/
+  padding: 14px 16px;
   background-color: inherit;
   margin: 0;
 }
@@ -301,6 +254,7 @@ jrnlconf {
 .dropdown-content a {
   float: none;
   color: black;
+  padding: 12px 16px;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -308,10 +262,9 @@ jrnlconf {
 
 /* Add a dark background on topnav links and the dropdown button on hover */
 .topnav a:hover, .dropdown:hover .dropbtn {
-  /*background-color: #555;*/
-  color: black;
-  border-bottom: 2px black solid;
-  /*border-bottom: none;*/
+  background-color: #555;
+  color: white;
+  /* border-bottom: 1.5px solid black; */
 }
 
 /* Add a grey background to dropdown links on hover */
@@ -326,25 +279,23 @@ jrnlconf {
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 600px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
   }
   .topnav a.icon {
     float: right;
     display: block;
-
   }
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
-    /*font-size: 1.125rem;*/
   }
   .topnav.responsive a {
     float: none;
