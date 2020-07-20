@@ -8,9 +8,6 @@ body {
   	/*background-size: 100% 100%;*/
 }
 
-body.img {
-	opacity: 0.5;
-}
 
 p {
 	/*color: #2b2b2b;*/
@@ -24,6 +21,16 @@ h1, h2, h3, h4 {
 	text-transform: uppercase; 
 	font-family: "Helvetica Neue", Helvetica, Poppins, Arial, Roboto, sans-serif;
 	-webkit-font-smoothing: antialiased;
+	
+}
+
+h1, h2 {
+	padding-bottom: 20px;
+}
+
+h3, h4 {
+	padding-bottom: 5px;
+	padding-top: 10px;
 }
 
 
@@ -51,12 +58,25 @@ ul {
 	color: #494949;
 }
 
+/*
 .mini_bar {
     height: 5px;
     width: 40px;
     background-color: #494949;
     margin-top: 20px;
-}
+}*/
+
+.mini_bar {
+  position: relative;
+  margin-top: 2.2rem; }
+  .mini_bar:before {
+    position: absolute;
+    left: 0;
+    height: 5px;
+    content: '';
+    width: 2.25rem;
+    top: -12px;
+    background-color: #494949; }
 
 .header {
 	/*background: #252523;*/
@@ -144,10 +164,30 @@ jrnlconf {
 	font-style: italic;
 }
 
-.paper, .project, .course {
-	padding-bottom: 10px;
-	padding-left: 0px;
+.project {
+	padding: 10px 0px 30px 0px;
+	width: 100%;
 }
+
+.paper, .course {
+	padding-bottom: 15px;
+	width: 100%;
+}
+
+.project {
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+.project_img {
+	width: 300px;
+	padding-right: 60px;
+}
+
+.project_info {
+	padding: 20px 0px;
+}
+
 
 .projecttitle, .papertitle, .coursetitle {
 	font-weight: bold;
@@ -176,9 +216,21 @@ jrnlconf {
 }
 
 .profile_sec {
-	padding-bottom: 10px;
+	padding-bottom: 40px;
 	padding-top: 25px; 
-	overflow: hidden;
+	display: grid;
+	grid-template-columns: 250px 650px;
+}
+
+.profile_img {
+	width: 220px;
+}
+
+.profile_sec img {
+	width: 200px;
+}
+
+.profile_info {
 }
 
 .profile_sec h1 {
@@ -186,11 +238,12 @@ jrnlconf {
   /*-webkit-font-smoothing: antialiased;*/
   text-align: left;
   margin-top: 5px;
-  font-size: 2rem;
+  /*font-size: 2rem;*/
+  padding: 0px;
 }
 
 .profile_sec h2 {
-  font-size: 1.5rem;
+  /*font-size: 1.5rem;*/
   font-weight: 800;
 }
 
@@ -209,33 +262,54 @@ jrnlconf {
 }
 
 .content_sec, .blog {
-	padding-bottom: 10px;
-	padding-top: 10px; 
+	padding-bottom: 40px;
+	padding-top: 20px; 
 }
 
 .blog h2 {
-	font-size: 1.5rem;
+	/*font-size: 1.5rem;*/
 	text-transform: none;
+
 }
 
 .content_sec h2 {
-  font-size: 1.5rem;
+  /*font-size: 1.5rem;*/
   font-weight: 800;
-  margin-top: 10px;
 }
 
 .content_sec h3 {
-  font-size: 1.25rem;
+  /*font-size: 1.25rem;*/
   
 }
 
 .content_sec ul {
-	list-style-type: square;
-	padding-left: 30px;
 }
 
 .content_sec li {
-	padding-bottom: 2px;
+}
+
+.project img {
+	width: 300px;
+	height: 190px;
+	box-shadow: 3px 4px 5px 6px #C0C0C0;
+	transition: transform 0.5s;
+}
+
+.project img:hover {
+	-ms-transform: scale(1.05); /* IE 9 */
+	-webkit-transform: scale(1.05); /* Safari 3-8 */
+	transform: scale(1.05); 
+}
+
+.project ul {
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+
+.project li {
+	float: left;
+	display: inline;
 }
 
 .player {
@@ -322,7 +396,7 @@ jrnlconf {
 .topnav a:hover, .dropdown:hover .dropbtn {
   /*background-color: #555;*/
   /*color: #696969;*/
-  color: #282728;
+  /*color: #282728;*/
   border-bottom: 2px #282728 solid;
   /*border-bottom: none;*/
 }
@@ -339,19 +413,34 @@ jrnlconf {
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 800px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
   }
   .topnav a.icon {
     float: right;
     display: block;
-
   }
 }
 
+@media screen and (max-width: 860px) {
+  .project {
+  	display: grid;
+	grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .profile_sec {
+  	display: grid;
+	grid-template-columns: 1fr;
+  }
+}
+
+
+
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 800px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive a.icon {
     position: absolute;

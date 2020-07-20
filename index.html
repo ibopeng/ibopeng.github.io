@@ -20,18 +20,11 @@
 	<!-- <link href="https://fonts.googleapis.com/css?family=Arizonia|Georgia|Roboto|Arial|Helvetica|Helvetica+Neue|Times+New+Roman|Times|Poppins" rel="stylesheet"> -->
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link rel="icon" type="image/ico" href="images/wisconsin_badgers_logo.ico">
+	<link rel="icon" type="image/ico" href="images/earth.ico">
 
-	<script>
-		function myFunction() {
-		  var x = document.getElementById("myTopnav");
-		  if (x.className === "topnav") {
-		    x.className += " responsive";
-		  } else {
-		    x.className = "topnav";
-		  }
-		}
-	</script>
+	<script type="text/javascript" src="js/navigation_bar.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/smooth_scroll.js"></script>
 </head>
 
 <body>
@@ -42,6 +35,7 @@
 			</div>
 			<div class="topnav" id="myTopnav">
 			  <a href="#about" class="active">About</a>
+			  <a href="#news">News</a>
 			  <a href="#research">Research</a>
 			  <a href="#publications">Publications</a> 
 			  <a href="#teaching">Teaching</a>
@@ -54,45 +48,41 @@
 		<div class="container_content">
 			<a class="anchor" id="about"></a>
 			<div class="profile_sec">
-				<ul>
-					<li>
-						<img style="width:200px" alt="profile photo" src="images/bo_peng_profile_pxl.jpg" onmouseover="this.src='images/bo_peng_profile.jpg' " onmouseout="this.src='images/bo_peng_profile_pxl.jpg' ">
-					</li>
-					<li>
-						<h1>Bo Peng</h1>
-						<p>
-							PhD Student, Research Assistant<br>
-							Geographic Information Science<br>
-							Electrical and Computer Engineering<br>
-							University of Wisconsin-Madison<br>
-							Email: bo.peng AT wisc.edu<br>
-							<a href="https://map.wisc.edu/s/jlhkyl46" target="_blank">
-							413 Science Hall, 550 N Park St <br>
-							Madison, WI 53706</a> 
-						</p>
-					</li>
-				</ul>
+				<div class="profile_img">
+					<img alt="profile photo" src="images/bo_peng_profile_pxl.jpg" onmouseover="this.src='images/bo_peng_profile.jpg' " onmouseout="this.src='images/bo_peng_profile_pxl.jpg' ">
+				</div>
+				<div class="profile_info">
+					<h1>Bo Peng</h1>
+					<p>
+						PhD Student, Research Assistant<br>
+						Geographic Information Science<br>
+						Electrical and Computer Engineering<br>
+						University of Wisconsin-Madison<br>
+						Email: bo.peng AT wisc.edu<br>
+						<a href="https://map.wisc.edu/s/jlhkyl46" target="_blank">
+						413 Science Hall, 550 N Park St <br>
+						Madison, WI 53706</a> 
+					</p>
+				</div>
 			</div>
 
 			<!--About -->
 			<div class="content_sec">
-				<div class="mini_bar"></div>
-				<h2>About</h2>
+				<h2 class="mini_bar">About</h2>
             	<p>
 					Bo is a Ph.D. student in Geographic Information Science with doctoral minor in <a href="https://www.engr.wisc.edu/department/electrical-computer-engineering/research-in-electric-computer-engineering/machine-learning/">Electrical Engineering (Machine Learning)</a> at Department of Geography, University of Wisconsin - Madison, working with Dr. <a href="https://geography.wisc.edu/profile.php?p=111">Qunying Huang</a>. </p>
 				<p>
-					He, as the principal investigator (PI), is awarded the <a href="https://www.microsoft.com/en-us/aiforearth">Microsoft AI for Earth Grant</a> in 2020. He is working as a research intern at <a href="https://www.lanl.gov/">Los Alamos National Laboratory</a>  supported by the <a href="https://www.lanl.gov/projects/national-security-education-center/information-science-technology/summer-schools/applied-machine-learning/index.php">Applied Machine Learning Summer Research Fellowship</a> for summer 2020. 
+					He, as the principal investigator (PI), is awarded the <a href="https://www.microsoft.com/en-us/aiforearth">Microsoft AI for Earth Grant</a> in 2020. He is working as a research intern at <a href="https://www.lanl.gov/">Los Alamos National Laboratory</a>  supported by the <a href="https://www.lanl.gov/projects/national-security-education-center/information-science-technology/summer-schools/applied-machine-learning/index.php">Applied Machine Learning Summer Research Fellowship</a> for summer 2020. Previously, he was a research assistant at National Engineering Laboratory for Satellite Remote Sensing Applications, Institute of Remote Sensing and Digital Earth, Chinese Academy of Sciences in 2014-2017. 
 				</p>
 				<p>
-					Previously, he was a research assistant at National Engineering Laboratory for Satellite Remote Sensing Applications, Institute of Remote Sensing and Digital Earth, Chinese Academy of Sciences. He received the M.Sc. in ECE (Machine Learning track) from UW-Madison, the M.Sc. in Geographic Information System from Chinese Academy of Sciences, and the B.Eng. in Remote Sensing from Wuhan University.
+					He received the M.Sc. in ECE (Machine Learning track) from UW-Madison, the M.Sc. in Geographic Information System from Chinese Academy of Sciences, and the B.Eng. in Remote Sensing from Wuhan University.
 				</p>
 			</div>
 
 			<!--Recent News -->
-			<a class="anchor" id="recent_news"></a>
+			<a class="anchor" id="news"></a>
 			<div class="content_sec">
-				<div class="mini_bar"></div>
-				<h2>Recent News</h2>
+				<h2 class="mini_bar">Recent News</h2>
 				<ul>
 					<li><b>[06/2020]</b> Summer Research Intern for machine learning and computer vision at <a href="https://www.lanl.gov/">Los Alamos National Laboratory</a>.</li>
 					<li><b>[05/2020]</b> Awarded the <a href="https://www.microsoft.com/en-us/aiforearth">Microsoft AI for Earth Grant</a> as the principal investigator (PI). (<a href="blogs/msai4earth.html">blog post</a>)</li>
@@ -108,49 +98,69 @@
 			<!--Research -->
 			<a class="anchor" id="research"></a>
 			<div class="content_sec">
-				<div class="mini_bar"></div>
-				<h2>Research</h2>
+				<h2 class="mini_bar">Research</h2>
 				<p>
 					Research topics span earth observation, computer vision, machine learning, and disaster resilience. Some example projects include: 
 				</p>
-				<ul>
-					<li>
-						<div class="project">
-							<div class="projecttitle">
-								<a href="https://www.lanl.gov/projects/national-security-education-center/information-science-technology/summer-schools/applied-machine-learning/index.php">Machine Learning for Analyzing Scientific Images</a>
-							</div>
-							Role: Research Fellow<br>
-							Mentors: Dr. <a href="https://public.lanl.gov/doyen/">Diane Oyen</a> and Dr. Juan Castorena<br> 
-							<jrnlconf>Sponsor: Los Alamos National Laboratory, Applied Machine Learning Summer Research Fellowship</jrnlconf>
+				<div class="project">
+					<div class="project_img">
+						<a href="https://www.lanl.gov/projects/national-security-education-center/information-science-technology/summer-schools/applied-machine-learning/index.php"><img src="images/lanl_aml_sketch.png"></a>
+					</div>
+					<div class="project_info">
+						<div class="projecttitle">
+							<a href="https://www.lanl.gov/projects/national-security-education-center/information-science-technology/summer-schools/applied-machine-learning/index.php">Machine Learning for Analyzing Scientific Images</a>
 						</div>
-					</li>
-					<li>
-						<div class="project">
-							<div class="projecttitle">
-								<a href="blogs/msai4earth.html">Self-Supervised Deep Learning and Computer Vision for Real-Time Large-Scale High-Definition Flood Extent Mapping</a>
-							</div>
-							Role: Principal Investigator (PI)<br>
-							<jrnlconf>Sponsor: Microsoft AI for Earth Grant</jrnlconf>
+						<div>
+							<p>
+								Role: Research Fellow<br>
+								Mentors: Dr. <a href="https://public.lanl.gov/doyen/">Diane Oyen</a> and Dr. Juan Castorena<br> 
+								Sponsor: Los Alamos National Laboratory, Applied Machine Learning Summer Research Fellowship
+							</p>
+
 						</div>
-					</li>
-					<li>
-						<div class="project">
-							<div class="projecttitle">
-								<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1940091">A GeoAI Data-Fusion Framework for Real-Time Assessment of Flood Damage and Transportation Resilience by Integrating Complex Sensor Datasets</a>
-							</div>
-							Role: Research Assistant<br>
-							PI: Dr. <a href="https://geography.wisc.edu/profile.php?p=111">Qunying Huang</a><br>
-							<jrnlconf>Sponsor: National Science Foundation</jrnlconf>
+					</div>
+				</div>
+				<div class="project">
+					<div class="project_img">
+						<a href="blogs/msai4earth.html"><img src="images/flood_roi_noaa.jpg"></a>
+					</div>
+					<div class="project_info">
+						<div class="projecttitle">
+							<a href="blogs/msai4earth.html">Self-Supervised Deep Learning and Computer Vision for Real-Time Large-Scale High-Definition Flood Extent Mapping</a>
 						</div>
-					</li>
-				</ul>
+						<div>
+							<p>
+								Role: Principal Investigator (PI)<br>
+								Sponsor: Microsoft AI for Earth Grant
+							</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="project">
+					<div class="project_img">
+						<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1940091"><img src="images/harvey_vis_planet_post.jpg"></a>
+					</div>
+					<div class="project_info">
+						<div class="projecttitle">
+							<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1940091">A GeoAI Data-Fusion Framework for Real-Time Assessment of Flood Damage and Transportation Resilience by Integrating Complex Sensor Datasets</a>
+						</div>
+						<div>
+							<p>
+								Role: Research Assistant<br>
+								PI: Dr. <a href="https://geography.wisc.edu/profile.php?p=111">Qunying Huang</a><br>
+								Sponsor: National Science Foundation
+							</p>
+
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<!--Research -->
 			<a class="anchor" id="publications"></a>
 			<div class="content_sec">
-				<div class="mini_bar"></div>
-				<h2>Publications</h2>
+				<h2 class="mini_bar">Selected Publications</h2>
 				<p>( *research advisor )</p>
 				<ul>
 					<li>
@@ -158,8 +168,11 @@
 							<div class="papertitle">
 								<a href="https://doi.org/10.1145/3356395.3365542">Flood Depth Estimation from Web Images</a>
 							</div>
-							Zonglin Meng, <b>Bo Peng</b>, Qunying Huang*<br>
-							<jrnlconf>2nd ACM SIGSPATIAL International Workshop on Advances on Resilient and Intelligent Cities (ARIC), 2019</jrnlconf>
+							<div>
+								Zonglin Meng, <b>Bo Peng</b>, Qunying Huang*<br>
+								<jrnlconf>2nd ACM SIGSPATIAL International Workshop on Advances on Resilient and Intelligent Cities (ARIC), 2019</jrnlconf>
+							</div>
+
 						</div>						
 					</li>
 					<li>
@@ -176,8 +189,11 @@
 							<div class="papertitle">
 								<a href="https://doi.org/10.1145/3356471.3365235">Urban Flood Mapping with Residual Patch Similarity Learning</a>
 							</div>
-							<b>Bo Peng</b>, Xinyi Liu, Zonglin Meng, Qunying Huang*<br>
-							<jrnlconf>3rd ACM SIGSPATIAL Workshop on AI for Geographic Knowledge Discovery (GeoAI), 2019</jrnlconf>
+							<div>
+								<b>Bo Peng</b>, Xinyi Liu, Zonglin Meng, Qunying Huang*<br>
+								<jrnlconf>3rd ACM SIGSPATIAL Workshop on AI for Geographic Knowledge Discovery (GeoAI), 2019</jrnlconf>
+							</div>
+
 						</div>						
 					</li>
 					<li>
@@ -185,8 +201,11 @@
 							<div class="papertitle">
 								<a href="https://doi.org/10.1109/JSTARS.2017.2725382">Fast Real-Time Causal Line-wise Progressive Hyperspectral Anomaly Detection via Cholesky Decomposition</a>
 							</div>
-							Lifu Zhang*, <b>Bo Peng</b>, Feizhou Zhang, Lizhe Wang, Hongming Zhang, Peng Zhang, Qingxi Tong*<br>
-							<jrnlconf>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 2017</jrnlconf>
+							<div>
+								Lifu Zhang*, <b>Bo Peng</b>, Feizhou Zhang, Lizhe Wang, Hongming Zhang, Peng Zhang, Qingxi Tong*<br>
+								<jrnlconf>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 2017</jrnlconf>
+							</div>
+
 						</div>						
 					</li>
 					<li>
@@ -194,8 +213,10 @@
 							<div class="papertitle">
 								<a href="https://doi.org/10.1109/IGARSS.2016.7730533">Fast Real-time Target Detection via Target-oriented Band Selection</a>
 							</div>
-							<b>Bo Peng</b>, Lifu Zhang*, Taixia Wu, Hongming Zhang<br>
-							<jrnlconf>IEEE International Geoscience and Remote Sensing Symposium (IGARSS), 2016</jrnlconf>
+							<div>
+								<b>Bo Peng</b>, Lifu Zhang*, Taixia Wu, Hongming Zhang<br>
+								<jrnlconf>IEEE International Geoscience and Remote Sensing Symposium (IGARSS), 2016</jrnlconf>
+							</div>
 						</div>							
 					</li>
 				</ul>			
@@ -204,16 +225,17 @@
 			<!--Teaching -->
 			<a class="anchor" id="teaching"></a>
 			<div class="content_sec">
-				<div class="mini_bar"></div>
-				<h2>Teaching</h2>
+				<h2 class="mini_bar">Teaching</h2>
 				<ul>
 					<li>
 						<div class="course">
 							<div class="coursetitle">
 								CS/ECE/ME 532 - Matrix Methods in Machine Learning
 							</div>
-							Senior Teaching Assistant, Spring 2020<br>
-							Teaching Assistant, Fall 2019
+							<div>
+								Senior Teaching Assistant, Spring 2020<br>
+								Teaching Assistant, Fall 2019
+							</div>
 						</div>
 					</li>
 					<li>
@@ -221,8 +243,10 @@
 							<div class="coursetitle">
 								GEOG 377 - Intro to Geographic Information Systems
 							</div>
-							Lecturer / Instructor, Summer 2019 & 2020<br>
-							Teaching Assistant, Spring 2019
+							<div>
+								Lecturer / Instructor, Summer 2019 & 2020<br>
+								Teaching Assistant, Spring 2019
+							</div>
 						</div>
 					</li>
 					<li>
@@ -230,7 +254,9 @@
 							<div class="coursetitle">
 								GEOG 574 - Spatial Database
 							</div>
-							Teaching Assistant, Fall 2018							
+							<div>
+								Teaching Assistant, Fall 2018	
+							</div>					
 						</div>
 					</li>
                 </ul>
