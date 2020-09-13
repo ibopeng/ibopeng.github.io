@@ -212,15 +212,18 @@ ul {
 	padding-bottom: 40px;
 	padding-top: 25px; 
 	display: grid;
-	grid-template-columns: 250px 650px;
+	grid-template-columns: 350px 550px;
 }
 
 .profile_img {
-	width: 220px;
+	width: 300px;
 }
 
 .profile_sec img {
-	width: 200px;
+	width: 300px;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
 }
 
 .profile_info {
@@ -410,7 +413,7 @@ ul {
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
   .profile_sec {
   	display: grid;
 	grid-template-columns: 1fr;
