@@ -233,14 +233,16 @@ ul {
   	margin-right: auto;
 }
 
-.profile_info {
+.profile_info img{
+	width: 45px;
+	display: inline;
 }
 
 .profile_sec h1 {
   font-weight: 800;
   /*-webkit-font-smoothing: antialiased;*/
   text-align: left;
-  margin-top: 5px;
+  margin-top: 0;
   /*font-size: 2rem;*/
   padding: 0px;
 }
@@ -357,7 +359,7 @@ ul {
 .topnav .icon {
 	display: none;
 	/*color: #282728;*/
-	color: black;
+	color: #121416;
 }
 
 
