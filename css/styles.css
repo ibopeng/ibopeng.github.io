@@ -4,6 +4,7 @@ body {
 	/*font-family: Georgia, Times New Roman, Times, serif;*/
 	font-family: muli, avenir, "Helvetica Neue", Helvetica, Poppins, Arial, Roboto, sans-serif;
 	font-size:1.125rem;
+	color: #494949;
 	/*background: #CDCDCD;*/
   	background-image: url('../images/background.png');
   	background-size: contain;
@@ -12,7 +13,7 @@ body {
 
 p {
 	/*color: #2b2b2b;*/
-	color: #494949;
+	/*color: #494949;*/
 	line-height: 1.5rem;
 }
 
@@ -57,7 +58,7 @@ a:active {
 
 ul {
 	line-height:1.5rem;
-	color: #343a40;
+	/*color: #343a40;*/
 }
 
 /*
@@ -155,7 +156,7 @@ ul {
 	padding: 15px 16px;
 	margin: 0 auto;
 	/*font-family: "Arizonia", Georgia, Times New Roman, Times, serif;*/
-	font-family: muli, avenir, "Helvetica Neue", Helvetica, Poppins, Arial, Roboto, sans-serif;
+	/*font-family: muli, avenir, "Helvetica Neue", Helvetica, Poppins, Arial, Roboto, sans-serif;*/
 	text-transform: none;
 	font-size: 1.75rem;
 	/*font: 400 100px/1.3;*/
