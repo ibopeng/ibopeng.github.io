@@ -106,7 +106,7 @@ ul {
 
 .content {
 	/*position: absolute;*/
-	margin-top: 84px;
+	margin-top: 120px;
 	max-width: 100%;
 	margin-bottom: 25px;
 	margin-left: 20px;
@@ -211,7 +211,7 @@ ul {
 .anchor {
     display: block;
     position: relative;
-    top: -84px;
+    top: -120px;
     visibility: hidden;
 }
 
@@ -340,7 +340,7 @@ ul {
 	float: left;
 	display: block;
 	/*color: #282728;*/
-	color: black;
+	color: #121416;
 	text-align: center;
 	padding: 2px 0px;
 	margin: 19px 16px;
@@ -349,7 +349,7 @@ ul {
 
 /* Add a dark background on topnav links and the dropdown button on hover */
 .topnav a:hover {
-  border-bottom: 2px black solid;
+  border-bottom: 2px #121416 solid;
 }
 
 
