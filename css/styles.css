@@ -1,28 +1,20 @@
 body {
 	width: 100%;
 	margin: auto;
-	/*font-family: Georgia, Times New Roman, Times, serif;*/
 	font-family: muli, avenir, "Helvetica Neue", Helvetica, Poppins, Arial, Roboto, sans-serif;
 	font-size:1.125rem;
 	color: #494949;
-	/*background: #CDCDCD;*/
   	background-image: url('../images/background.png');
   	background-size: contain;
 }
 
 
 p {
-	/*color: #2b2b2b;*/
-	/*color: #494949;*/
 	line-height: 1.5rem;
 }
 
 h1, h2, h3, h4 {
-	/*color: #282728;*/
-	/*color: #494949;*/
 	color: #343a40;
-	/*text-transform: uppercase; */
-	/*font-family: "Helvetica Neue", Helvetica, Poppins, Arial, Roboto, sans-serif;*/
 	-webkit-font-smoothing: antialiased;
 	
 }
@@ -39,15 +31,11 @@ h3, h4 {
 
 a {
 	text-decoration: none;
-	/*color: #2E86C1;*/
-  /*color: #2A5DB0;*/
  	color: #0479a8;
 }
 
 a:hover {
   background: none;
-  /*border-bottom: 1px solid #2A5DB0;*/
-  /*color: purple;*/
   text-decoration: underline;
 }
 
@@ -58,16 +46,8 @@ a:active {
 
 ul {
 	line-height:1.5rem;
-	/*color: #343a40;*/
 }
 
-/*
-.mini_bar {
-    height: 5px;
-    width: 40px;
-    background-color: #494949;
-    margin-top: 20px;
-}*/
 
 .mini_bar {
   position: relative;
@@ -82,7 +62,6 @@ ul {
     background-color: #343a40; }
 
 .header {
-	/*background: #0a1922;*/
   	background-color: rgba(255, 255, 255, 0.95);
 	width: 100%;
 	height: 65px;
@@ -95,17 +74,12 @@ ul {
 .container_header {
 	max-width: 100%;
 	height: 100%;
-	/*margin: 0 auto;*/
 	margin-left: 20px;
 	margin-right: 20px;
 	background: inherit;
-	/*display: grid;*/
-	/*grid-template-columns: auto auto;*/
-	/*border-bottom: 1px #C0C0C0 solid;*/
 }
 
 .content {
-	/*position: absolute;*/
 	margin-top: 120px;
 	max-width: 100%;
 	margin-bottom: 25px;
@@ -155,12 +129,8 @@ ul {
 .logo h2 {
 	padding: 15px 16px;
 	margin: 0 auto;
-	/*font-family: "Arizonia", Georgia, Times New Roman, Times, serif;*/
-	/*font-family: muli, avenir, "Helvetica Neue", Helvetica, Poppins, Arial, Roboto, sans-serif;*/
 	text-transform: none;
 	font-size: 1.75rem;
-	/*font: 400 100px/1.3;*/
-	/*text-shadow: 4px 4px 0px rgba(0,0,0,0.1); */
 	color: white;
 }
 
@@ -194,7 +164,6 @@ ul {
 }
 
 .projecttitle a, .papertitle a, .coursetitle a {
-	/*color: #282728;*/
 	color: #494949;
 }
 
@@ -243,12 +212,10 @@ ul {
   /*-webkit-font-smoothing: antialiased;*/
   text-align: left;
   margin-top: 0;
-  /*font-size: 2rem;*/
   padding: 0px;
 }
 
 .profile_sec h2 {
-  /*font-size: 1.5rem;*/
   font-weight: 800;
 }
 
@@ -272,19 +239,15 @@ ul {
 }
 
 .blog h2 {
-	/*font-size: 1.5rem;*/
 	text-transform: none;
 
 }
 
 .content_sec h2 {
-  /*font-size: 1.5rem;*/
   font-weight: 800;
 }
 
-.content_sec h3 {
-  /*font-size: 1.25rem;*/
-  
+.content_sec h3 {  
 }
 
 .content_sec ul {
@@ -331,8 +294,6 @@ ul {
 	float: right;
 	height: 100%;
 	font-size: 1.125rem;
-	/*text-transform: uppercase;*/
-  	/*font-family: muli, avenir, "Helvetica Neue", Helvetica, Poppins, Arial, Roboto, sans-serif;*/
 	-webkit-font-smoothing: antialiased;
 
 }
@@ -341,7 +302,6 @@ ul {
 .topnav a {
 	float: left;
 	display: block;
-	/*color: #282728;*/
 	color: #121416;
 	text-align: center;
 	padding: 2px 0px;
@@ -356,9 +316,8 @@ ul {
 
 
 /* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
+.topnav .material-icons {
 	display: none;
-	/*color: #282728;*/
 	color: #121416;
 }
 
@@ -372,12 +331,12 @@ ul {
 		height: auto;
 	}
 
-	.topnav .icon {
+	.topnav .material-icons {
 		text-align: right;
 	}
 
 	.topnav a {display: none;}
-	.topnav a.icon {
+	.topnav a.material-icons {
 		float: none;
 		display: block;
 		margin: 0;
@@ -387,13 +346,13 @@ ul {
 
 @media screen and (max-width: 810px) {
 	.topnav.responsive {position: relative;}
-	.topnav.responsive .icon {
+	.topnav.responsive .material-icons {
 		text-align: right;
 	}
 	.topnav.responsive a {
 		float: none;
 		display: block;
-		text-align: left;
+		text-align: center;
 		margin: 0;
 		padding: 20px 10px 20px 10px;
 	}
@@ -404,14 +363,14 @@ ul {
 		background-color: #DCDCDC;
 	}
 
-	.topnav a.icon:hover {
+	.topnav a.material-icons:hover {
 		text-decoration: none;
 		color: #696969;
 		border-bottom: none;
 		background-color: none;
 	}
 
-	.topnav.responsive a:active, .topnav a.icon:active {
+	.topnav.responsive a:active, .topnav a.material-icons:active {
 	}
 
 }
