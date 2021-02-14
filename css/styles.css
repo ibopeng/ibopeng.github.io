@@ -297,7 +297,7 @@ ul {
 
 /* Add a top navigation */
 .topnav {
-	background-color: none;
+	background-color: inherit;
 	overflow: hidden;
 	float: right;
 	height: 100%;
