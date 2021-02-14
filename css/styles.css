@@ -68,15 +68,23 @@ ul {
 	top: 0px;
 	position: fixed;
 	z-index: 999;
-	/*box-shadow: 0px 0px 5px 3px #E0E0E0;*/
-	/*background-image: url('../images/20200825-CAfiresLaura.gif');*/
 }
 
 .banner {
-	height: 400px;
-	background-image: url('../images/20200825-CAfiresLaura_cut2.gif');
-	background-size: cover;
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 25%;
+	background-color: black;
 }
+
+
+.banner_img {
+	position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 
 .container_header {
 	max-width: 100%;
@@ -310,8 +318,6 @@ ul {
 	float: left;
 	display: block;
 	color: #121416;
-	/*color: white;*/
-
 	text-align: center;
 	padding: 2px 0px;
 	margin: 19px 16px;
@@ -397,5 +403,8 @@ ul {
   .profile_sec {
   	display: grid;
 	grid-template-columns: 1fr;
+  }
+  .banner {
+  	display: none;
   }
 }
