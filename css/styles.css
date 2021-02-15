@@ -76,6 +76,8 @@ ul {
 	height: 0;
 	padding-bottom: 25%;
 	background-color: black;
+	/*background-image: url('../images/iss064e027825_cut.jpg');*/
+  	/*background-size: cover;*/
 }
 
 
@@ -105,7 +107,7 @@ ul {
 .container_content {
 	background: rgba(255, 255, 255, 0.6);
 	max-width: 900px;
-	margin: 0 auto;
+	margin: 20px auto;
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-top: 20px;
@@ -201,8 +203,8 @@ ul {
 }
 
 .profile_sec {
-	padding-bottom: 40px;
-	padding-top: 25px; 
+	padding-bottom: 20px;
+	padding-top: 20px; 
 	display: grid;
 	grid-template-columns: 350px 550px;
 }
