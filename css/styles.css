@@ -81,10 +81,18 @@ ul {
 }
 
 
-.banner_img {
+.banner img {
 	position: absolute;
   width: 100%;
   height: 100%;
+}
+
+.banner p {
+	position: absolute;
+	padding-left: 10px;
+	bottom: 0;
+	margin: 10px 0px;
+	color: white;
 }
 
 
