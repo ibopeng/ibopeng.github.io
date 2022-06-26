@@ -41,7 +41,8 @@ a {
 
 a:hover {
 	background: none;
-	text-decoration: underline;
+	/*text-decoration: underline; */
+	color: #f063f5;
 }
 
 a:active {
@@ -199,18 +200,20 @@ ul {
 	font-weight: bold;
 }
 
+/*
 .projecttitle a,
 .papertitle a,
 .coursetitle a {
-	color: #494949;
+	color: #0479a8;
 }
 
 .projecttitle a:hover,
 .papertitle a:hover,
 .coursetitle a:hover {
-	color: #0479a8;
+	color: #f063f5;
 	text-decoration: none;
 }
+*/
 
 .projecttitle a:active,
 .papertitle a:active,
