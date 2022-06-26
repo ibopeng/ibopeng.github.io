@@ -2,10 +2,10 @@ body {
 	width: 100%;
 	margin: auto;
 	font-family: muli, avenir, "Helvetica Neue", Helvetica, Poppins, Arial, Roboto, sans-serif;
-	font-size:1.125rem;
+	font-size: 1.125rem;
 	color: #494949;
-  	background-image: url('../images/background.png');
-  	background-size: contain;
+	background-image: url('../images/background.png');
+	background-size: contain;
 }
 
 
@@ -13,17 +13,22 @@ p {
 	line-height: 1.5rem;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
 	color: #343a40;
 	-webkit-font-smoothing: antialiased;
-	
+
 }
 
-h1, h2 {
+h1,
+h2 {
 	padding-bottom: 20px;
 }
 
-h3, h4 {
+h3,
+h4 {
 	padding-bottom: 5px;
 	padding-top: 10px;
 }
@@ -31,38 +36,41 @@ h3, h4 {
 
 a {
 	text-decoration: none;
- 	color: #0479a8;
+	color: #0479a8;
 }
 
 a:hover {
-  background: none;
-  text-decoration: underline;
+	background: none;
+	text-decoration: underline;
 }
 
 a:active {
-  background: none;
-  color: purple;
+	background: none;
+	color: purple;
 }
 
 ul {
-	line-height:1.5rem;
+	line-height: 1.5rem;
 }
 
 
 .mini_bar {
-  position: relative;
-  margin-top: 2.2rem; }
-  .mini_bar:before {
-    position: absolute;
-    left: 0;
-    height: 5px;
-    content: '';
-    width: 2.25rem;
-    top: -12px;
-    background-color: #343a40; }
+	position: relative;
+	margin-top: 2.2rem;
+}
+
+.mini_bar:before {
+	position: absolute;
+	left: 0;
+	height: 5px;
+	content: '';
+	width: 2.25rem;
+	top: -12px;
+	background-color: #343a40;
+}
 
 .header {
-  	background-color: rgba(255, 255, 255, 0.95);
+	background-color: rgba(255, 255, 255, 0.95);
 	width: 100%;
 	height: 65px;
 	top: 0px;
@@ -77,14 +85,14 @@ ul {
 	padding-bottom: 25%;
 	background-color: black;
 	/*background-image: url('../images/iss064e027825_cut.jpg');*/
-  	/*background-size: cover;*/
+	/*background-size: cover;*/
 }
 
 
 .banner img {
 	position: absolute;
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .banner p {
@@ -143,13 +151,13 @@ ul {
 }
 
 .logo a {
-  color: #343a40;
-  /*color: white;*/
+	color: #343a40;
+	/*color: white;*/
 }
 
 .logo a:hover {
-  color: #696969;
-  text-decoration: none;
+	color: #696969;
+	text-decoration: none;
 }
 
 .logo h2 {
@@ -165,7 +173,8 @@ ul {
 	width: 100%;
 }
 
-.paper, .course {
+.paper,
+.course {
 	padding-bottom: 15px;
 	width: 100%;
 }
@@ -184,35 +193,42 @@ ul {
 	padding: 20px 0px;
 }
 
-
-.projecttitle, .papertitle, .coursetitle {
+.projecttitle,
+.papertitle,
+.coursetitle {
 	font-weight: bold;
 }
 
-.projecttitle a, .papertitle a, .coursetitle a {
+.projecttitle a,
+.papertitle a,
+.coursetitle a {
 	color: #494949;
 }
 
-.projecttitle a:hover, .papertitle a:hover, .coursetitle a:hover {
+.projecttitle a:hover,
+.papertitle a:hover,
+.coursetitle a:hover {
 	color: #0479a8;
 	text-decoration: none;
 }
 
-.projecttitle a:active, .papertitle a:active, .coursetitle a:active {
-  color: purple;
+.projecttitle a:active,
+.papertitle a:active,
+.coursetitle a:active {
+	color: purple;
 }
 
 
 .anchor {
-    display: block;
-    position: relative;
-    top: -120px;
-    visibility: hidden;
+	display: block;
+	position: relative;
+	top: -120px;
+	visibility: hidden;
 }
 
 .profile_sec {
 	padding-bottom: 20px;
-	padding-top: 20px; 
+	padding-top: 20px;
 	display: grid;
 	grid-template-columns: 350px 550px;
 }
@@ -224,44 +240,45 @@ ul {
 .profile_sec img {
 	width: 300px;
 	display: block;
-  	margin-left: auto;
-  	margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.profile_info img{
+.profile_info img {
 	width: 40px;
 	display: inline;
 }
 
 .profile_sec h1 {
-  font-weight: 800;
-  /*-webkit-font-smoothing: antialiased;*/
-  text-align: left;
-  margin-top: 0;
-  padding: 0px;
+	font-weight: 800;
+	/*-webkit-font-smoothing: antialiased;*/
+	text-align: left;
+	margin-top: 0;
+	padding: 0px;
 }
 
 .profile_sec h2 {
-  font-weight: 800;
+	font-weight: 800;
 }
 
 .profile_sec ul {
 	margin: 0px;
 	padding: 0px;
-	float:left;
+	float: left;
 	display: inline-block;
 }
 
 .profile_sec li {
-  padding-right: 30px;
-  margin: 0px;
-  float: left;
-  display: inline-block;
+	padding-right: 30px;
+	margin: 0px;
+	float: left;
+	display: inline-block;
 }
 
-.content_sec, .blog {
+.content_sec,
+.blog {
 	padding-bottom: 40px;
-	padding-top: 20px; 
+	padding-top: 10px;
 }
 
 .blog h2 {
@@ -270,16 +287,7 @@ ul {
 }
 
 .content_sec h2 {
-  font-weight: 800;
-}
-
-.content_sec h3 {  
-}
-
-.content_sec ul {
-}
-
-.content_sec li {
+	font-weight: 800;
 }
 
 .project img {
@@ -290,9 +298,11 @@ ul {
 }
 
 .project img:hover {
-	-ms-transform: scale(1.05); /* IE 9 */
-	-webkit-transform: scale(1.05); /* Safari 3-8 */
-	transform: scale(1.05); 
+	-ms-transform: scale(1.05);
+	/* IE 9 */
+	-webkit-transform: scale(1.05);
+	/* Safari 3-8 */
+	transform: scale(1.05);
 }
 
 .project ul {
@@ -307,9 +317,9 @@ ul {
 }
 
 .player {
-  margin: 0 auto;
-  font-size: small;
-  max-width:100%;
+	margin: 0 auto;
+	font-size: small;
+	max-width: 100%;
 }
 
 
@@ -337,8 +347,8 @@ ul {
 
 /* Add a dark background on topnav links and the dropdown button on hover */
 .topnav a:hover {
-  border-bottom: 2px #121416 solid;
-  /*border-bottom: 2px white solid;*/
+	border-bottom: 2px #121416 solid;
+	/*border-bottom: 2px white solid;*/
 }
 
 
@@ -362,7 +372,10 @@ ul {
 		text-align: right;
 	}
 
-	.topnav a {display: none;}
+	.topnav a {
+		display: none;
+	}
+
 	.topnav a.material-icons {
 		float: none;
 		display: block;
@@ -372,10 +385,14 @@ ul {
 }
 
 @media screen and (max-width: 810px) {
-	.topnav.responsive {position: relative;}
+	.topnav.responsive {
+		position: relative;
+	}
+
 	.topnav.responsive .material-icons {
 		text-align: right;
 	}
+
 	.topnav.responsive a {
 		float: none;
 		display: block;
@@ -384,7 +401,7 @@ ul {
 		padding: 20px 10px 20px 10px;
 	}
 
-	.topnav.responsive a:not(:first-child):hover{
+	.topnav.responsive a:not(:first-child):hover {
 		text-decoration: none;
 		border-bottom: none;
 		background-color: #DCDCDC;
@@ -397,25 +414,26 @@ ul {
 		background-color: none;
 	}
 
-	.topnav.responsive a:active, .topnav a.material-icons:active {
-	}
+	.topnav.responsive a:active,
+	.topnav a.material-icons:active {}
 
 }
 
 /* controle the screen size change*/
 @media screen and (max-width: 860px) {
-  .project {
-  	display: grid;
-	grid-template-columns: 1fr;
-  }
+	.project {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
 }
 
 @media screen and (max-width: 700px) {
-  .profile_sec {
-  	display: grid;
-	grid-template-columns: 1fr;
-  }
-  .banner {
-  	display: none;
-  }
+	.profile_sec {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+
+	.banner {
+		display: none;
+	}
 }
