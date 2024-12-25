@@ -6,7 +6,7 @@ subtitle: AI Researcher, leading Remote Sensing Team at the Ping An Silicon Vall
 
 profile:
   align: left
-  image: prof_pic.png
+  image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Palo Alto, CA</p>
