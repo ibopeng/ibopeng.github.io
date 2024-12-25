@@ -16,13 +16,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-submenus",
-          title: "submenus",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/_pages/dropdown/";
-          },
         },{id: "post-tutorial-a-diffusion-model-for-image-restoration",
       
         title: "Tutorial - A Diffusion Model for Image Restoration",
