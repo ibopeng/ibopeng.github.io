@@ -5,4 +5,4 @@ inline: true
 related_posts: true
 ---
 
-Initiated a new project, **Genotes**, where I am sharing some of my notes on GenAI models through blog posts. Check out my [first post](/_posts/2024-11-11-irsde.md) on a diffusion model for image restoration.
+Initiated a new project, **Genotes**, where I am sharing some of my notes on GenAI models through blog posts. Check out my [first post]({% post_url 2024-11-11-irsde %}) on a diffusion model for image restoration.
