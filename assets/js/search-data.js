@@ -27,8 +27,8 @@ ninja.data = [{
           window.location.href = "/blog/2024/irsde/";
         
       },
-    },{id: "news-i-have-initiated-a-new-project-genotes-where-i-am-publising-some-of-my-notes-on-genai-models-as-a-blog-series",
-          title: 'I have initiated a new project, Genotes, where I am publising some of...',
+    },{id: "news-initiated-a-new-project-genotes-where-i-am-sharing-some-of-my-notes-on-genai-models-through-blog-posts-check-out-my-first-post-on-a-diffusion-model-for-image-restoration",
+          title: 'Initiated a new project, Genotes, where I am sharing some of my notes...',
           description: "",
           section: "News",},{id: "news-i-will-be-co-chairing-the-agu-oral-amp-amp-poster-session-harnessing-geospatial-ai-geoai-best-practices-validation-and-real-world-applications-join-us-to-explore-the-advancements-in-ai-foundation-models-for-earth-sciences",
           title: 'I will be co-chairing the AGU oral &amp;amp;amp; poster session: “Harnessing Geospatial AI...',
