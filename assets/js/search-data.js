@@ -27,7 +27,10 @@ ninja.data = [{
           window.location.href = "/blog/2024/irsde/";
         
       },
-    },{id: "news-i-will-be-co-chairing-the-agu-oral-amp-amp-poster-session-harnessing-geospatial-ai-geoai-best-practices-validation-and-real-world-applications-join-us-to-explore-the-advancements-in-ai-foundation-models-for-earth-sciences",
+    },{id: "news-i-have-initiated-a-new-project-genotes-where-i-am-publising-some-of-my-notes-on-genai-models-as-a-blog-series",
+          title: 'I have initiated a new project, Genotes, where I am publising some of...',
+          description: "",
+          section: "News",},{id: "news-i-will-be-co-chairing-the-agu-oral-amp-amp-poster-session-harnessing-geospatial-ai-geoai-best-practices-validation-and-real-world-applications-join-us-to-explore-the-advancements-in-ai-foundation-models-for-earth-sciences",
           title: 'I will be co-chairing the AGU oral &amp;amp;amp; poster session: “Harnessing Geospatial AI...',
           description: "",
           section: "News",},{id: "news-i-am-hiring-a-senior-research-scientist-full-time-and-a-phd-research-intern-6-months-ping-an-silicon-valley-lab-both-roles-will-focus-on-developing-multimodal-vision-language-models-vlms-aimed-at-addressing-climate-change-challenges-email-me-if-you-are-interested",
