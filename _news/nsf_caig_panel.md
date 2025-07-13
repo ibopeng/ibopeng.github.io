@@ -1,0 +1,8 @@
+---
+layout: post
+date: 2025-06-01 00:00:00-0000
+inline: true
+related_posts: false
+---
+
+Served on the review panel for the National Science Foundation (NSF), supporting the evaluation of proposals on AI for (Geo)Sciences.
