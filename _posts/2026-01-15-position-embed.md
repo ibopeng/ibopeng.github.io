@@ -231,7 +231,7 @@ In practice, RoPE is applied efficiently:
 
 Note: While RoPE extrapolates better than learned embeddings, extending it to massive lengths still requires tricks like "NTK-Aware Scaling" or "Linear Scaling," which are simple adjustments to the rotation frequency.
 
-### Why Relative Bias Extrapolates "Perfectly" (The Bucket Trick)
+### Why Relative Bias Extrapolates Well
 
 You might ask: "If the Relative Bias approach is so inefficient, why did models like T5 use it?" 
 
@@ -317,8 +317,4 @@ The answer lies in two properties of the attention mechanism:
 - **Periodic Wrapping:** High-frequency dimensions (for small $i$) are like the "second hand" on a watch. The rotation $\theta_i$ is close to 1 ($i=0 \rightarrow \theta_i = 1$). They spin so fast that they complete many full circles within the first 1,024 tokens. E.g., the rotation angle for token at position 1024 is $1024 \cdot \theta_i \approx 1024 \text{ for small } i $. By token 2,048, the hand might have spun 200 times instead of 100, but the **final angle** it lands on is still a value the model has seen thousands of times.
 - **Relative Distance Preservation:** Attention scores are calculated based on the *difference* between angles. At position 2,048, the angular difference between it and position 2,047 is identical to the difference between positions 2 and 1. The model’s "local grammar" stays intact.
 - **The Low-Frequency "Hour Hand":** Low-frequency dimensions are different. They rotate so slowly they might only complete $1/4$ of a circle during training since the rotation $\theta_i$ is very small for larger $i$. If we let them continue to $1/2$ a circle at token 2,048, the model enters "uncharted territory." **NTK-Aware scaling** effectively slows this hand down by using a larger base $b'$, keeping it within the 1/4-circle range the model understands or has seen during training.
-
-
-*Disclosure: This post was drafted with the assistance of AI language models*
-
 
