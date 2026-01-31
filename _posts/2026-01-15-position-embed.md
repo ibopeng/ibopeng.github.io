@@ -23,15 +23,8 @@ bibliography: literature.bib
 #     jekyll-toc plugin (https://github.com/toshimaru/jekyll-toc).
 toc:
   - name: Preliminary
-    # if a section has subsections, you can add them as follows:
-    # subsections:
-    #   - name: Example Child Subsection 1
-    #   - name: Example Child Subsection 2
   - name: Absolute Position Embedding
   - name: Relative Position Embedding
-    subsections:
-      - name: sub-1
-      - name: sub-2
 
 
 # Below is an example of injecting additional post-specific styles.
@@ -67,11 +60,11 @@ Previous architectures, like Recurrent Neural Networks (RNNs), processed words s
 
 Transformers, however, process all tokens in a sequence without considering their positions in the sequence. Without some extra help, the model sees the sentence as a "bag of words." To a raw Transformer, the sentence:
 
-> *"The dog bit the man"*
+*"The dog bit the man"*
 
 Looks mathematically identical to:
 
-> *"The man bit the dog"*
+*"The man bit the dog"*
 
 Because the model has no inherent sense of order, we must explicitly inject position information into the data. This is where **Position Embeddings** come in. They assign a unique vector to every index ($0, 1, 2, ... T$) in the sequence.
 
@@ -82,7 +75,8 @@ $$\begin{aligned}
 \boldsymbol{q}_m &= f_q(\boldsymbol{x}_m, m) \\
 \boldsymbol{k}_n &= f_k(\boldsymbol{x}_n, n) \\
 \boldsymbol{v}_n &= f_v(\boldsymbol{x}_n, n),
-\end{aligned} \tag{1}$$
+\end{aligned} 
+\tag{1}$$
 
 where $\boldsymbol{q}_m, \boldsymbol{k}_n$ and $\boldsymbol{v}_n$ represent the $m^{\text{th}}$ and $n^{\text{th}}$ positions of query $Q \in \mathbb{R}^{N\times d_k}$, key $K \in \mathbb{R}^{N\times d_k}$, and value $V \in \mathbb{R}^{N\times d_v}$, respectively, as in the self-attention mechanism.
 
@@ -90,7 +84,9 @@ $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)
 
 Note that the dimension change from $d_\text{model}$ to $d_k$ or $d_v$ because the Transformer doesn't use $X$ directly for attention. It multiplies $X$ by three separate learnable weight matrices ($W^Q$, $W^K$, $W^V$) to project the data into the "head" dimension.
 
-### Method 1: Sinusoidal Embeddings (The "Attention Is All You Need" Approach)
+## Absolute Position Embedding
+
+### Sinusoidal Embeddings
 
 This method was introduced in the original Transformer paper by Vaswani et al. <d-cite key="vaswani2017attention"></d-cite> Instead of learning the position vectors during training, the authors calculated them using fixed mathematical formulas based on sine and cosine waves.
 
@@ -105,7 +101,8 @@ For a specific position  and a specific dimension , the embedding is calculated 
 $$\begin{aligned}
 PE_{(pos, 2i)} = \sin\left(\frac{pos}{10000^{2i/d_\text{model}}}\right) \\
 PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{2i/d_\text{model}}}\right)
-\end{aligned} \tag{2}$$
+\end{aligned} 
+\tag{2}$$
 
 Where:
 
@@ -132,7 +129,8 @@ $$\begin{aligned}
 \sin(\omega_i pos) \\
 \cos(\omega_i pos)
 \end{bmatrix}
-\end{aligned} \tag{3}$$
+\end{aligned} 
+\tag{3}$$
 
 3. **Bounded:** The values are always between -1 and 1 (stable training).
 4. **Unique:** No two positions look the same since its geometric progression makes a large coordinate space. Note that, if linear progression of the wavelength, higher dimension may have the same position embedding as the lower dimension due to sin/cos's repeatative patterns for long contexts.
@@ -144,7 +142,7 @@ Even though the sin/cos function stays between -1 and 1, the combination of valu
 - Inference Phase: Suddenly, you feed it position 2000. This position has a "fingerprint" (a specific combination of phases across dimensions) that the model has never seen.
 - Result: The neural network treats this as "out of distribution" noise. It generates garbage query/key projections, the attention mechanism gets confused, and the perplexity explodes.
 
-### Method 2: Learned Position Embeddings (The BERT & GPT Approach)
+### Learned Position Embeddings
 
 While the sinusoidal approach is elegant, later models like BERT and the early GPT series took a "brute force" approach that is often easier to implement.
 
@@ -166,7 +164,7 @@ Regardless of whether you use the Sinusoidal or Learned method, the application 
 This "stamps" the token with information about where it sits in the sentence, allowing the Attention mechanism to differentiate between the first "The" and the second "The" in a sentence.
 
 
-## Part 2: The Modern Standard—Relative Positions and RoPE
+## Relative Position Embedding
 
 While Absolute Position Embeddings (both Sinusoidal and Learned) are effective, they share a fundamental flaw: they treat position as a fixed address. But in language, the absolute address doesn't matter as much as the relative distance. The word "dog" (at index 500) relates to the word "barked" (at index 505) exactly the same way "dog" (at index 5) relates to "barked" (at index 10). The relationship is defined by the distance ($+5$), not the coordinate. 
 
@@ -174,11 +172,11 @@ While Absolute Position Embeddings (both Sinusoidal and Learned) are effective, 
 
 To solve this, researchers (Shaw et al., 2018 <d-cite key="shaw2018rpe"></d-cite>; Raffel et al., 2020 <d-cite key="raffel2020t5"></d-cite>) proposed Relative Position Embeddings. Instead of adding a vector to the input tokens, RPE modifies the Attention Mechanism itself. When the model calculates the attention score between query $i$ and key $j$, it explicitly adds a bias term representing the distance $i - j$:
 
-$$\text{Attention}(Q, K) = \text{Softmax}\left( \frac{Q K^T + \text{Bias}_{\text{distance}}}{\sqrt{d_k}} \right) V$$
+$$
+\text{Attention}(Q, K) = \text{Softmax}\left( \frac{Q K^T + \text{Bias}_{\text{distance}}}{\sqrt{d_k}} \right) V 
+\tag{4}$$
 
 **The Problem with RPE**: While accurate, standard RPE is computationally expensive. It often requires materializing massive $N \times N$ ($N$ is the sequence length) matrices to store these bias terms, or it complicates the optimized attention kernels (like FlashAttention). We needed a method that had the efficiency of Absolute Embeddings (just modifying the vectors once) but the mathematical properties of Relative Embeddings. 
-
-Here comes **RoPE**.
 
 ### RoPE: Rotary Positional Embeddings
 
@@ -186,23 +184,32 @@ Introduced by Su et al. (2021) <d-cite key="su2024roformer"></d-cite>, RoPE is t
 
 #### The Math: How RoPE Works
 
-RoPE treats the embedding vector of size $d$ not as a single chunk, but as $d/2$ pairs of numbers. Each pair is treated as a coordinate $(x, y)$ in a 2D plane. For a token at position $m$, we rotate each pair by an angle $m \cdot \theta_i$, where $\theta_i$ is the frequency for that specific $i^{th}$ dimension. Using complex numbers, this is elegantly simple. For a 2D vector represented as a complex number $q$:$$f(q, m) = q \cdot e^{im\theta}$$In linear algebra terms (real numbers), this is a rotation matrix multiplication. For a feature pair $(q_1, q_2)$ at position $m$:$$\begin{pmatrix} q'_1 \\ q'_2 \end{pmatrix} =
+RoPE treats the embedding vector of size $d$ not as a single chunk, but as $d/2$ pairs of numbers. Each pair is treated as a coordinate $(x, y)$ in a 2D plane. For a token at position $m$, we rotate each pair by an angle $m \cdot \theta_i$, where $\theta_i$ is the frequency for that specific $i^{th}$ dimension. Using complex numbers, this is elegantly simple. For a 2D vector represented as a complex number $q$:$$f(q, m) = q \cdot e^{im\theta}$$In linear algebra terms (real numbers), this is a rotation matrix multiplication. For a feature pair $(q_1, q_2)$ at position $m$:
+
+$$
+\begin{pmatrix} q'_1 \\ q'_2 \end{pmatrix} =
 \begin{pmatrix}
 \cos(m\theta) & -\sin(m\theta) \\
 \sin(m\theta) & \cos(m\theta)
 \end{pmatrix}
-\begin{pmatrix} q_1 \\ q_2 \end{pmatrix}$$
+\begin{pmatrix} q_1 \\ q_2 \end{pmatrix}
+\tag{5}$$
 
 #### The "Relative" Magic (The Dot Product)
 
 The reason RoPE took over the world is what happens when two rotated vectors interact in the Self-Attention layer. Let's look at the dot product between a Query at position $m$ and a Key at position $n$. $\boldsymbol{q}_m$ is rotated by angle $m\theta$. $\boldsymbol{k}_n$ is rotated by angle $n\theta$. When we take their dot product (which measures similarity):
-$$\langle \boldsymbol{q}_m, \boldsymbol{k}_n \rangle = \text{Real}( (\boldsymbol{q} e^{im\theta}) \cdot (\boldsymbol{k} e^{in\theta})^* )$$
+
+$$
+\langle \boldsymbol{q}_m, \boldsymbol{k}_n \rangle = \text{Real}( (\boldsymbol{q} e^{im\theta}) \cdot (\boldsymbol{k} e^{in\theta})^* )
+\tag{6}$$
+
 Using exponent rules ($e^A \cdot e^{-B} = e^{A-B}$), the absolute positions $m$ and $n$ cancel out, leaving only the difference:
-$$\langle \boldsymbol{q}_m, \boldsymbol{k}_n \rangle = \langle \boldsymbol{q}, \boldsymbol{k} \rangle \cos((m-n)\theta) + \dots$$
 
-**The Result**: The attention score depends only on the relative distance $(m-n)$. The model naturally understands "5 steps back" regardless of whether it's at step 100 or step 1000.
+$$
+\langle \boldsymbol{q}_m, \boldsymbol{k}_n \rangle = \langle \boldsymbol{q}, \boldsymbol{k} \rangle \cos((m-n)\theta) + \dots
+\tag{7}$$
 
-#### Implementation Summary
+The attention score depends only on the relative distance $(m-n)$. The model naturally understands "5 steps back" regardless of whether it's at step 100 or step 1000.
 
 In practice, RoPE is applied efficiently: 
 - Do not touch the value vectors ($V$). 
@@ -210,7 +217,7 @@ In practice, RoPE is applied efficiently:
 - Rotate each pair by its specific frequency angle $\theta_i$ multiplied by the position index $m$.
 - Feed these rotated $Q$ and $K$ into standard attention.
 
-(Note: While RoPE extrapolates better than learned embeddings, extending it to massive lengths still requires tricks like "NTK-Aware Scaling" or "Linear Scaling," which are simple adjustments to the rotation frequency.)
+Note: While RoPE extrapolates better than learned embeddings, extending it to massive lengths still requires tricks like "NTK-Aware Scaling" or "Linear Scaling," which are simple adjustments to the rotation frequency.
 
 ### Why Relative Bias Extrapolates "Perfectly" (The Bucket Trick)
 
@@ -225,7 +232,11 @@ First, like RoPE, the Relative Bias method relies on the distance $i-j$, not the
 2. The "Clipping" or "Bucketing" Trick
 
 The real secret to its extrapolation capability is how it handles the "infinite" tail of potential distances. In the original paper (Shaw et al.) and T5, they don't learn a unique bias for every integer to infinity. Instead, they clip the distance at a certain maximum (let's say $k=128$).
-$$\text{used\_distance} = \min(|i - j|, k)$$
+
+$$
+\text{used\_distance} = \min(|i - j|, k)
+\tag{8}$$
+
 This acts as a "catch-all" bucket. 
 - Distance 5: Uses the learned bias $b_5$.
 - Distance 50: Uses the learned bias $b_{50}$.
@@ -280,7 +291,7 @@ $$
 b' = b \cdot s^{\frac{d}{d-2}} \\
 \theta_i = b'^{-2i/d}
 \end{aligned}
-$$
+\tag{9}$$
 
 * **The Result:** This modification is **non-uniform**. It stretches the long-range (low-frequency) dimensions significantly while leaving the short-range (high-frequency) dimensions almost untouched.
 
@@ -296,7 +307,6 @@ The answer lies in two properties of the attention mechanism:
 - **The Low-Frequency "Hour Hand":** Low-frequency dimensions are different. They rotate so slowly they might only complete $1/4$ of a circle during training since the rotation $\theta_i$ is very small for larger $i$. If we let them continue to $1/2$ a circle at token 2,048, the model enters "uncharted territory." **NTK-Aware scaling** effectively slows this hand down by using a larger base $b'$, keeping it within the 1/4-circle range the model understands or has seen during training.
 
 
----
 *Disclosure: This post was drafted with the assistance of an AI language model*
 
 
