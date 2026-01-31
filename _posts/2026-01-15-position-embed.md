@@ -180,7 +180,19 @@ $$
 
 ### RoPE: Rotary Positional Embeddings
 
-Introduced by Su et al. (2021) <d-cite key="su2024roformer"></d-cite>, RoPE is the position embedding method of choice for modern LLMs, including Llama 2, Llama 3, Mistral, and PaLM. The Core Intuition: Rotation, Not Addition. Previous methods (Sinusoidal and Learned) moved the embedding vector by adding a position vector to it:$$\boldsymbol{x}' = \boldsymbol{x} + \boldsymbol{p}$$RoPE takes a different approach. It encodes position by rotating the vector in geometric space.$$\boldsymbol{x}' = \boldsymbol{R}_{pos} \cdot \boldsymbol{x}$$Why rotation? Because in 2D space, if you have a vector at angle $\theta$ and you rotate it by $\phi$, the new angle is simply $\theta + \phi$. Rotation is inherently additive in angles, which preserves relative information perfectly when we take the dot product. 
+Introduced by Su et al. (2021) <d-cite key="su2024roformer"></d-cite>, RoPE is the position embedding method of choice for modern LLMs, including Llama 2, Llama 3, Mistral, and PaLM. The Core Intuition: Rotation, Not Addition. Previous methods (Sinusoidal and Learned) moved the embedding vector by adding a position vector to it:
+
+$$
+\boldsymbol{x}' = \boldsymbol{x} + \boldsymbol{p}
+\tag{5}$$
+
+RoPE takes a different approach. It encodes position by rotating the vector in geometric space.
+
+$$
+\boldsymbol{x}' = \boldsymbol{R}_{pos} \cdot \boldsymbol{x}
+\tag{6}$$
+
+Why rotation? Because in 2D space, if you have a vector at angle $\theta$ and you rotate it by $\phi$, the new angle is simply $\theta + \phi$. Rotation is inherently additive in angles, which preserves relative information perfectly when we take the dot product. 
 
 #### The Math: How RoPE Works
 
@@ -193,7 +205,7 @@ $$
 \sin(m\theta) & \cos(m\theta)
 \end{pmatrix}
 \begin{pmatrix} q_1 \\ q_2 \end{pmatrix}
-\tag{5}$$
+\tag{7}$$
 
 #### The "Relative" Magic (The Dot Product)
 
@@ -201,13 +213,13 @@ The reason RoPE took over the world is what happens when two rotated vectors int
 
 $$
 \langle \boldsymbol{q}_m, \boldsymbol{k}_n \rangle = \text{Real}( (\boldsymbol{q} e^{im\theta}) \cdot (\boldsymbol{k} e^{in\theta})^* )
-\tag{6}$$
+\tag{8}$$
 
 Using exponent rules ($e^A \cdot e^{-B} = e^{A-B}$), the absolute positions $m$ and $n$ cancel out, leaving only the difference:
 
 $$
 \langle \boldsymbol{q}_m, \boldsymbol{k}_n \rangle = \langle \boldsymbol{q}, \boldsymbol{k} \rangle \cos((m-n)\theta) + \dots
-\tag{7}$$
+\tag{9}$$
 
 The attention score depends only on the relative distance $(m-n)$. The model naturally understands "5 steps back" regardless of whether it's at step 100 or step 1000.
 
@@ -235,7 +247,7 @@ The real secret to its extrapolation capability is how it handles the "infinite"
 
 $$
 \text{used\_distance} = \min(|i - j|, k)
-\tag{8}$$
+\tag{10}$$
 
 This acts as a "catch-all" bucket. 
 - Distance 5: Uses the learned bias $b_5$.
@@ -291,7 +303,7 @@ $$
 b' = b \cdot s^{\frac{d}{d-2}} \\
 \theta_i = b'^{-2i/d}
 \end{aligned}
-\tag{9}$$
+\tag{11}$$
 
 * **The Result:** This modification is **non-uniform**. It stretches the long-range (low-frequency) dimensions significantly while leaving the short-range (high-frequency) dimensions almost untouched.
 
