@@ -16,7 +16,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-tutorial-a-diffusion-model-for-image-restoration",
+        },{id: "post-position-embedding-in-llms",
+      
+        title: "Position Embedding in LLMs",
+      
+      description: "Overview of position embedding methods used in LLMs",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/position-embed/";
+        
+      },
+    },{id: "post-tutorial-a-diffusion-model-for-image-restoration",
       
         title: "Tutorial - A Diffusion Model for Image Restoration",
       
